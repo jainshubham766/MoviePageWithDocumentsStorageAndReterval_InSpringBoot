@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "ed36399d-5d09-491d-b3d4-f6278b4ddb75",
+		"name": "Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddNewMovie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t \"movieName\":\"H\",\r\n\t \"genre\":\"Drama\",\r\n\t \"duration\":\"1h 15m\",\r\n\t \"year\":\"2019\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movie/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAllMovie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMovie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchMoviesWithIncorrectNameAndCase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/search/e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"search",
+						"e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/delete/61d6be92a985fdd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"delete",
+						"61d6be92a985fdd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateByMovieName",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/updateMovie/61d6be81a985fdd9600e5e61",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"updateMovie",
+						"61d6be81a985fdd9600e5e61"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie in Pages by Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/genre/page/SciFi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"genre",
+						"page",
+						"SciFi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Template From year and Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/getByTemplate?year=2019&genre=Drama",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"getByTemplate"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019"
+						},
+						{
+							"key": "genre",
+							"value": "Drama"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get movie with match aggregation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/getByTemplate/match?genre=Drama",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"getByTemplate",
+						"match"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "Drama"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie with genre with pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/getByTemplate/page?year=2019&genre=Drama&size=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"getByTemplate",
+						"page"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019"
+						},
+						{
+							"key": "genre",
+							"value": "Drama"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aggregate_Group_By_Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movie/getByTemplate/genreSublistYear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"getByTemplate",
+						"genreSublistYear"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
